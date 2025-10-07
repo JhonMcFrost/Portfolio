@@ -22,7 +22,7 @@
     { 
       "title": "ATM CLI Process", 
       "description": "A command-line interface for ATM transactions.",
-      "languages": ["Java"]
+      "languages": ["Java", "MySQL"]
     },
     { 
       "title": "Tourism Website", 
@@ -32,7 +32,7 @@
     { 
       "title": "Pathpickr", 
       "description": "A track recommending application for students that helps them find suitable study paths.",
-      "languages": ["HTML", "CSS", "Java"]
+      "languages": ["HTML", "CSS", "Java", "JavaScript"]
     }
   ],
   "contact": {
