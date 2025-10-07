@@ -1,0 +1,468 @@
+:root{
+  --indigo: #3949ab; /* similar to Colors.indigo */
+}
+body{
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  font-family: 'Roboto Mono', monospace;
+  color: white; /* Set all base text to white */
+  margin: 0;
+  display: flex;
+}
+
+/* Sidebar styling */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 100vh;
+  background: rgba(255,255,255,0.03);
+  border-right: 1px solid rgba(255,255,255,0.1);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 2rem 0;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav li {
+  margin: 0;
+}
+
+.sidebar-nav .nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  margin: 0.5rem 0;
+}
+
+/* Hide nav text on desktop */
+.nav-text {
+  display: none;
+}
+
+.sidebar-nav .nav-link:hover {
+  background: rgba(78, 205, 196, 0.1);
+  border-left-color: #4ecdc4;
+  color: #4ecdc4;
+}
+
+.sidebar-nav .nav-link svg {
+  transition: all 0.3s ease;
+}
+
+.sidebar-nav .nav-link:hover svg {
+  transform: scale(1.1);
+}
+
+/* Main content adjustment */
+.main-content {
+  margin-left: 80px;
+  flex: 1;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Mobile toggle button */
+.mobile-toggle {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+  background: rgba(78, 205, 196, 0.8);
+  border: none;
+  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mobile-toggle span {
+  width: 20px;
+  height: 2px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.mobile-toggle:hover {
+  background: rgba(78, 205, 196, 1);
+}
+
+/* Responsive sidebar */
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: flex;
+  }
+  
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .main-content {
+    margin-left: 0;
+  }
+}
+.avatar{
+  width:112px;
+  height:112px;
+  border-radius:50%;
+  object-fit:cover;
+  object-position: top;
+  border:4px solid rgba(255,255,255,0.06);
+  box-shadow: 0 8px 24px rgba(57,73,171,0.15);
+  margin:1rem auto;
+}
+.chip, .skill{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:20px;
+  background: rgba(255,255,255,0.03);
+  color: #4ecdc4; /* force white text */
+  border:1px solid transparent;
+  transition:all 120ms ease;
+  font-size:.9rem;
+}
+.chip:hover, .skill:hover{ background: rgba(144,202,249,0.08); border-color:#90caf9; color: #ffffff; }
+
+/* Project language chips */
+.project-lang-chip {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  background: rgba(78, 205, 196, 0.1);
+  color: #4ecdc4;
+  border: 1px solid rgba(78, 205, 196, 0.3);
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 120ms ease;
+}
+
+.project-lang-chip:hover {
+  background: rgba(78, 205, 196, 0.2);
+  border-color: #4ecdc4;
+}
+
+.card.project-card{ transition: box-shadow 150ms ease, border-color 150ms ease; border:1px solid transparent; }
+.card.project-card{ background: rgba(255,255,255,0.02); border-radius:12px; }
+.card.project-card:hover{ box-shadow: 0 10px 30px rgba(57,73,171,0.25); border-color: rgba(207,232,255,0.25); }
+.icon-indigo{ color: var(--indigo); }
+.contact-row{ display:flex; align-items:center; gap:.5rem; }
+.contact-row strong{ color: #4ecdc4 !important; }
+@media (max-width:767.98px){
+  .avatar{ width:96px; height:96px }
+}
+
+/* Layout helpers moved from inline attributes */
+.content-wrapper{ max-width: 980px; margin-left: auto; margin-right: auto; }
+
+/* Header card styling (replaces bg-white rounded shadow-sm) */
+.site-header{ background: rgba(255,255,255,0.03); border-radius: 0.6rem; box-shadow: 0 6px 18px rgba(6,8,30,0.45); padding: 1rem; margin-bottom: 1rem; }
+
+/* Footer styles */
+footer#footer{ color: rgba(230,238,248,0.7); }
+
+/* Adjust title and subtitle contrast */
+#name{ color: #ffffff; }
+#title{ color: #ffffff; }
+/* Ensure other muted text also appears white */
+.text-muted, p, .card-text { color: #ffffff !important; }
+
+/* Project card titles and headings */
+.card.project-card h3,
+.card.project-card .h6,
+.card.project-card .fw-semibold,
+.card.project-card .card-body > h3 { color: #4ecdc4 !important; }
+
+/* If any anchor inside project cards has color set by Bootstrap, force white */
+.card.project-card a { color: #ffffff !important; }
+
+/* Education section styling */
+.education-item {
+  background: rgba(255,255,255,0.02);
+  border-radius: 8px;
+  border-left: 3px solid #4ecdc4;
+  transition: all 0.3s ease;
+}
+
+.education-item h3 {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+
+.education-item:hover {
+  background: rgba(255,255,255,0.04);
+  transform: translateX(5px);
+}
+
+.education-details {
+  color: #4ecdc4 !important;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* =========================== */
+/* RESPONSIVE DESIGN RULES    */
+/* =========================== */
+
+/* Large tablets and small desktops (992px and down) */
+@media (max-width: 992px) {
+  .content-wrapper {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .main-content {
+    padding: 1.5rem;
+  }
+  
+  .site-header {
+    padding: 1.5rem;
+  }
+}
+
+/* Tablets (768px and down) */
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: flex;
+  }
+  
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    width: 250px; /* Wider on mobile for better touch targets */
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+  }
+  
+  .sidebar-nav .nav-link {
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    justify-content: flex-start;
+    flex-direction: row;
+    border-left: none;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .nav-text {
+    display: inline-block;
+    margin-left: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+  
+  .content-wrapper {
+    padding: 0 0.5rem;
+  }
+  
+  .site-header {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  /* Stack header content vertically on mobile */
+  .site-header .d-flex {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
+  
+  /* Project grid responsive */
+  #projects-grid .col-12 {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+  
+  /* Chips and skills responsive */
+  #chips, #skills-list {
+    justify-content: center !important;
+  }
+  
+  .chip, .skill, .project-lang-chip {
+    margin: 0.25rem;
+  }
+}
+
+/* Small phones (576px and down) */
+@media (max-width: 576px) {
+  .main-content {
+    padding: 0.75rem;
+  }
+  
+  .site-header {
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .content-wrapper {
+    padding: 0 0.25rem;
+  }
+  
+  /* Smaller typography on very small screens */
+  #name {
+    font-size: 1.25rem !important;
+  }
+  
+  #title {
+    font-size: 1rem !important;
+  }
+  
+  .h5 {
+    font-size: 1.1rem !important;
+  }
+  
+  /* Education items stack better */
+  .education-item {
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .education-item h3 {
+    font-size: 1.1rem !important;
+  }
+  
+  /* Contact rows wrap better */
+  .contact-row {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  
+  /* Project cards more compact */
+  .card.project-card .card-body {
+    padding: 0.75rem;
+  }
+  
+  .project-lang-chip {
+    font-size: 0.7rem;
+    padding: 3px 6px;
+  }
+}
+
+/* Extra small phones (480px and down) */
+@media (max-width: 480px) {
+  .mobile-toggle {
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .main-content {
+    padding: 0.5rem;
+  }
+  
+  .site-header {
+    padding: 0.5rem;
+  }
+  
+  .content-wrapper {
+    padding: 0;
+  }
+  
+  /* Very compact sections */
+  section {
+    padding: 0.75rem 0 !important;
+  }
+  
+  /* Minimal chip sizes */
+  .chip, .skill {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+  
+  .project-lang-chip {
+    font-size: 0.65rem;
+    padding: 2px 5px;
+  }
+  
+  /* Simplified contact layout */
+  .contact-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
+  }
+  
+  .contact-row svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Landscape phones */
+@media (max-width: 768px) and (orientation: landscape) {
+  .sidebar {
+    width: 200px;
+  }
+  
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .site-header {
+    padding: 0.75rem;
+  }
+}
+
+/* High DPI / Retina displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .avatar {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Print styles */
+@media print {
+  .sidebar,
+  .mobile-toggle {
+    display: none !important;
+  }
+  
+  .main-content {
+    margin-left: 0 !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .site-header,
+  .education-item,
+  .card.project-card {
+    background: white !important;
+    border: 1px solid #ccc !important;
+  }
+}

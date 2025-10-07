@@ -1,0 +1,44 @@
+{
+  "name": "Jhon Mcneil Magtibay",
+  "title": "Full Stack Developer",
+  "avatar": "images/IMG_5311.JPG",
+  "about": "Hi! I'm Mcneil. \n \nI'm a backend developer specializing in Java and Node.js, with a strong focus on building efficient, scalable, and secure server-side applications. I enjoy tackling complex problems and designing systems that perform seamlessly behind the scenes. \n\nWhen I’m not coding, you’ll probably find me exploring vast virtual worlds — I’m a big fan of open-world games, where I can dive into new adventures and uncover hidden details, much like I do in code.",
+  "education": [
+    {
+      "degree": "Bachelor of Science in Information Technology",
+      "institution": "Batangas State University The National Engineering School - Mabini Campus",
+      "year": "2023 - Present"
+    },
+    {
+      "degree": "Senior High School - ICT Strand",
+      "institution": "Anselmo A. Sandoval Memorial National High School",
+      "year": "2021 - 2023",
+      "details": "Graduated with High Honors"
+    }
+  ],
+  "chips": ["Web Development", "Backend Development"],
+  "skills": ["Angular", "Nodejs", "Java", "Responsive UI"],
+  "projects": [
+    { 
+      "title": "ATM CLI Process", 
+      "description": "A command-line interface for ATM transactions.",
+      "languages": ["Java"]
+    },
+    { 
+      "title": "Tourism Website", 
+      "description": "Beautiful tourism website showcasing destinations and packages.",
+      "languages": ["HTML", "CSS", "JavaScript", "Bootstrap"]
+    },
+    { 
+      "title": "Pathpickr", 
+      "description": "A track recommending application for students that helps them find suitable study paths.",
+      "languages": ["HTML", "CSS", "Java"]
+    }
+  ],
+  "contact": {
+    "email": "jhonmcneilmagtibay5002@gmail.com",
+    "linkedin": "linkedin.com/in/jhon-mcneil-magtibay",
+    "github": "github.com/JhonMcFrost",
+    "facebook": "facebook.com/jhonmcneil.magtibay.7"
+  }
+}
