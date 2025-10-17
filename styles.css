@@ -360,7 +360,7 @@ footer#footer{ color: rgba(230,238,248,0.7); }
 .notable-achievement-item h3 {
   font-size: 1.25rem !important;
   font-weight: 600 !important;
-  color: #ffffff !important;
+  color: #4ecdc4 !important;
 }
 .notable-achievement-item:hover {
   background: rgba(255,255,255,0.04);
