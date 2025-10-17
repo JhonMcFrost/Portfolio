@@ -387,6 +387,29 @@ footer#footer{ color: rgba(230,238,248,0.7); }
 /* RESPONSIVE DESIGN RULES    */
 /* =========================== */
 
+/* Extra large screens (1400px and up) */
+@media (min-width: 1400px) {
+  .content-wrapper {
+    max-width: 1200px;
+    padding: 0 2rem;
+  }
+  
+  .main-content {
+    padding: 2rem;
+  }
+}
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .content-wrapper {
+    max-width: 1100px;
+  }
+  
+  .main-content {
+    padding: 1.75rem;
+  }
+}
+
 /* Large tablets and small desktops (992px and down) */
 @media (max-width: 992px) {
   .content-wrapper {
@@ -400,6 +423,12 @@ footer#footer{ color: rgba(230,238,248,0.7); }
   
   .site-header {
     padding: 1.5rem;
+  }
+  
+  /* Ensure projects display nicely on tablets */
+  #projects-grid .col-lg-4 {
+    width: 50% !important;
+    padding: 0.5rem;
   }
 }
 
@@ -475,6 +504,17 @@ footer#footer{ color: rgba(230,238,248,0.7); }
     margin-bottom: 1rem;
   }
   
+  /* Better project card spacing on tablet */
+  #projects-grid .col-md-6 {
+    width: 100% !important;
+  }
+  
+  /* Optimize contact form for tablets */
+  .contact-form .row .col-md-6 {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+  
   /* Chips and skills responsive */
   #chips, #skills-list {
     justify-content: center !important;
@@ -536,6 +576,15 @@ footer#footer{ color: rgba(230,238,248,0.7); }
   /* Contact form responsive */
   .contact-form {
     padding: 1rem;
+  }
+  
+  /* Stack contact form fields on mobile */
+  .contact-form .row .col-md-6 {
+    margin-bottom: 1rem;
+  }
+  
+  .contact-form .form-control {
+    font-size: 16px; /* Prevents zoom on iOS */
   }
   
   /* Contact rows wrap better */
@@ -603,6 +652,59 @@ footer#footer{ color: rgba(230,238,248,0.7); }
     width: 16px;
     height: 16px;
   }
+  
+  /* Ensure project cards are fully responsive */
+  .card.project-card {
+    margin-bottom: 1rem;
+  }
+  
+  /* Make sure long project titles wrap properly */
+  .card.project-card .h6 {
+    font-size: 1rem !important;
+    line-height: 1.3;
+    word-wrap: break-word;
+  }
+}
+
+/* Extra extra small devices (360px and down) */
+@media (max-width: 360px) {
+  .main-content {
+    padding: 0.25rem;
+  }
+  
+  .site-header {
+    padding: 0.5rem 0.25rem;
+  }
+  
+  /* Ultra compact typography */
+  #name {
+    font-size: 1.1rem !important;
+  }
+  
+  #title {
+    font-size: 0.9rem !important;
+  }
+  
+  .h5 {
+    font-size: 1rem !important;
+  }
+  
+  /* Compact project cards */
+  .card.project-card .card-body {
+    padding: 0.5rem;
+  }
+  
+  .project-lang-chip {
+    font-size: 0.6rem;
+    padding: 1px 4px;
+  }
+  
+  /* Ensure sidebar icons are touchable */
+  .sidebar-contacts .contact-icon {
+    width: 38px;
+    height: 38px;
+    margin: 0.25rem;
+  }
 }
 
 /* Landscape phones */
@@ -617,6 +719,23 @@ footer#footer{ color: rgba(230,238,248,0.7); }
   
   .site-header {
     padding: 0.75rem;
+  }
+  
+  /* Optimize project grid for landscape phones */
+  #projects-grid .col-12 {
+    width: 50% !important;
+    float: left;
+  }
+}
+
+/* Portrait tablets */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  #projects-grid .col-lg-4 {
+    width: 50% !important;
+  }
+  
+  .content-wrapper {
+    padding: 0 1.5rem;
   }
 }
 
