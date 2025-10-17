@@ -2,7 +2,7 @@
   --indigo: #3949ab; /* similar to Colors.indigo */
 }
 body{
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+  background: #1a1a2e;
   font-family: 'Roboto Mono', monospace;
   color: white; /* Set all base text to white */
   margin: 0;
@@ -16,7 +16,7 @@ body{
   top: 0;
   width: 80px;
   height: 100vh;
-  background: rgba(255,255,255,0.03);
+  background: #171729;
   border-right: 1px solid rgba(255,255,255,0.1);
   z-index: 1000;
   display: flex;
@@ -54,6 +54,36 @@ body{
 /* Hide nav text on desktop */
 .nav-text {
   display: none;
+}
+
+/* Sidebar Contact Icons */
+.sidebar-contacts {
+  margin-top: auto;
+  padding: 1rem 0.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.contact-icon:hover {
+  color: #4ecdc4;
+  background: rgba(78, 205, 196, 0.1);
+  transform: scale(1.1);
 }
 
 .sidebar-nav .nav-link:hover {
@@ -170,7 +200,21 @@ body{
 
 .card.project-card{ transition: box-shadow 150ms ease, border-color 150ms ease; border:1px solid transparent; }
 .card.project-card{ background: rgba(255,255,255,0.02); border-radius:12px; }
-.card.project-card:hover{ box-shadow: 0 10px 30px rgba(57,73,171,0.25); border-color: rgba(207,232,255,0.25); }
+.card.project-card:hover{ 
+  box-shadow: 0 10px 30px rgba(78, 205, 196, 0.25); 
+  border-color: rgba(78, 205, 196, 0.25); 
+  transform: translateY(-5px);
+}
+
+/* Make clickable project cards maintain text color */
+a.project-card { 
+  color: inherit !important; 
+  text-decoration: none !important; 
+}
+a.project-card:hover { 
+  color: inherit !important; 
+  text-decoration: none !important; 
+}
 .icon-indigo{ color: var(--indigo); }
 .contact-row{ display:flex; align-items:center; gap:.5rem; }
 .contact-row strong{ color: #4ecdc4 !important; }
@@ -227,6 +271,118 @@ footer#footer{ color: rgba(230,238,248,0.7); }
   font-size: 0.9rem;
 }
 
+/* Notable Achievements Styling */
+.notable-achievement-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.notable-achievement-item:hover {
+  background: rgba(78, 205, 196, 0.1);
+  border-color: rgba(78, 205, 196, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(78, 205, 196, 0.2);
+}
+
+.notable-achievement-item h3 {
+  color: #4ecdc4;
+  font-weight: 600;
+}
+
+.achievement-year {
+  color: #4ecdc4 !important;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Contact Form Styling */
+.contact-form {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.contact-form .form-label {
+  color: #4ecdc4;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.contact-form .form-control {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #4ecdc4;
+  box-shadow: 0 0 0 0.2rem rgba(78, 205, 196, 0.25);
+  color: #ffffff;
+}
+
+.contact-form .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form .btn-primary {
+  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.contact-form .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
+}
+
+.contact-form .btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(78, 205, 196, 0.5);
+}
+
+/* Notable Achievements section styling */
+.notable-achievement-item {
+  background: rgba(255,255,255,0.02);
+  border-radius: 8px;
+  border-left: 3px solid #4ecdc4;
+  transition: all 0.3s ease;
+}
+.notable-achievement-item h3 {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+}
+.notable-achievement-item:hover {
+  background: rgba(255,255,255,0.04);
+  transform: translateX(5px);
+}
+.notable-achievement-item p {
+  color: #ffffff !important;
+  font-size: 0.9rem;
+}
+.notable-achievement-item p:last-child {
+  margin-bottom: 0;
+}
+.notable-achievement-item p:last-child {
+  margin-bottom: 0;
+}
+.notable-achievement-item p:last-child {
+  margin-bottom: 0;
+}
+.notable-achievement-item p:last-child {
+  margin-bottom: 0;
+}
+
 /* =========================== */
 /* RESPONSIVE DESIGN RULES    */
 /* =========================== */
@@ -277,6 +433,20 @@ footer#footer{ color: rgba(230,238,248,0.7); }
     margin-left: 1rem;
     font-size: 1rem;
     font-weight: 500;
+  }
+  
+  /* Mobile contact icons styling */
+  .sidebar-contacts {
+    padding: 1.5rem;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .contact-icon {
+    width: 45px;
+    height: 45px;
   }
   
   .main-content {
@@ -351,6 +521,21 @@ footer#footer{ color: rgba(230,238,248,0.7); }
   
   .education-item h3 {
     font-size: 1.1rem !important;
+  }
+  
+  /* Notable achievements responsive */
+  .notable-achievement-item {
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .notable-achievement-item h3 {
+    font-size: 1.1rem !important;
+  }
+  
+  /* Contact form responsive */
+  .contact-form {
+    padding: 1rem;
   }
   
   /* Contact rows wrap better */

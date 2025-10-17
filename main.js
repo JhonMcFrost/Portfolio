@@ -41,6 +41,50 @@ function setupNavBehavior(){
   });
 }
 
+// Contact Form Handler
+function setupContactForm() {
+  const form = document.getElementById('contact-form');
+  const successAlert = document.getElementById('contact-success');
+  const errorAlert = document.getElementById('contact-error');
+  const btnText = form.querySelector('.btn-text');
+  const btnLoading = form.querySelector('.btn-loading');
+  
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Show loading state
+    btnText.classList.add('d-none');
+    btnLoading.classList.remove('d-none');
+    successAlert.classList.add('d-none');
+    errorAlert.classList.add('d-none');
+    
+    // Get form data
+    const formData = new FormData(form);
+    
+    try {
+      // Using FormSubmit.co service - it will send an email to your address
+      const response = await fetch(`https://formsubmit.co/${window.portfolioEmail}`, {
+        method: 'POST',
+        body: formData
+      });
+      
+      if (response.ok) {
+        successAlert.classList.remove('d-none');
+        form.reset();
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      errorAlert.classList.remove('d-none');
+    }
+    
+    // Reset button state
+    btnText.classList.remove('d-none');
+    btnLoading.classList.add('d-none');
+  });
+}
+
 // Render helpers
 function el(tag, cls, text){ const e = document.createElement(tag); if(cls) e.className = cls; if(text!==undefined) e.textContent = text; return e; }
 
@@ -98,15 +142,36 @@ async function loadData(){
     projectsGrid.innerHTML = '';
     (data.projects||[]).forEach(proj => {
       const col = el('div','col-12 col-md-6 col-lg-4');
-      const card = document.createElement('div'); card.className = 'card project-card h-100';
-      const body = document.createElement('div'); body.className = 'card-body';
-      const row = document.createElement('div'); row.className = 'd-flex align-items-center mb-2';
-      const svg = el('svg','me-2 icon-indigo'); svg.setAttribute('width','20'); svg.setAttribute('height','20'); svg.setAttribute('viewBox','0 0 24 24');
+      
+      // Make the entire card clickable if repository exists
+      let card;
+      if (proj.repository) {
+        card = document.createElement('a');
+        card.href = proj.repository;
+        card.target = '_blank';
+        card.rel = 'noopener noreferrer';
+        card.className = 'card project-card h-100 text-decoration-none';
+        card.style.cursor = 'pointer';
+      } else {
+        card = document.createElement('div');
+        card.className = 'card project-card h-100';
+      }
+      
+      const body = document.createElement('div'); 
+      body.className = 'card-body';
+      const row = document.createElement('div'); 
+      row.className = 'd-flex align-items-center mb-2';
+      const svg = el('svg','me-2 icon-indigo'); 
+      svg.setAttribute('width','20'); 
+      svg.setAttribute('height','20'); 
+      svg.setAttribute('viewBox','0 0 24 24');
       svg.innerHTML = '<path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>';
       const h = el('h3','h6 mb-0 fw-semibold', proj.title||'');
-      row.appendChild(svg); row.appendChild(h);
+      row.appendChild(svg); 
+      row.appendChild(h);
       const p = el('p','card-text text-muted', proj.description||'');
-      body.appendChild(row); body.appendChild(p); 
+      body.appendChild(row); 
+      body.appendChild(p); 
       
       // Add programming language chips if they exist
       if (proj.languages && proj.languages.length > 0) {
@@ -118,16 +183,46 @@ async function loadData(){
         body.appendChild(langContainer);
       }
       
-      card.appendChild(body); col.appendChild(card); projectsGrid.appendChild(col);
+      card.appendChild(body); 
+      col.appendChild(card); 
+      projectsGrid.appendChild(col);
     });
 
-    // Contact
-    const contactList = document.getElementById('contact-list'); contactList.innerHTML = '';
+    // Notable Achievements
+    const notableAchievementsList = document.getElementById('notable-achievements-list');
+    notableAchievementsList.innerHTML = '';
+    (data['notable achievements']||[]).forEach(achievement => {
+      const div = el('div','notable-achievement-item mb-3 p-3');
+      const title = el('h3','h6 mb-1 fw-semibold', achievement.title||'');
+      const description = el('p','mb-1 text-muted', achievement.description||'');
+      const year = el('p','mb-0 achievement-year', achievement.year||'');
+      div.appendChild(title);
+      div.appendChild(description);
+      div.appendChild(year);
+      notableAchievementsList.appendChild(div);
+    });
+
+    // Sidebar Contact Icons
     const c = data.contact || {};
-    if(c.email) contactList.appendChild(makeContactRow('M3 8l9 6 9-6', 'Email', c.email));
-    if(c.linkedin) contactList.appendChild(makeContactRow('M21 8a7 7 0 1 0-14 0v7', 'LinkedIn', c.linkedin));
-    if(c.github) contactList.appendChild(makeContactRow('M12 2C6.48 2 2 6.48 2 12a10 10 0 0 0 7 9.6c.5.1.7-.2.7-.5v-1.8c-2.9.6-3.5-1.2-3.5-1.2-.5-1.2-1.2-1.5-1.2-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1 1.6 1 .9 1.6 2.4 1.2 3 .9.1-.7.4-1.2.7-1.5-2.3-.3-4.7-1.1-4.7-5 0-1.1.4-2 .9-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.2 2.6 1a9 9 0 0 1 4.7 0c1.8-1.2 2.6-1 2.6-1 .5 1.4.2 2.4.1 2.7.5.7.9 1.6.9 2.7 0 3.9-2.4 4.7-4.7 5 .4.3.7 1 .7 2v3c0 .3.2.6.7.5A10 10 0 0 0 22 12c0-5.52-4.48-10-10-10z', 'GitHub', c.github));
-    if(c.facebook) contactList.appendChild(makeContactRow('M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z', 'Facebook', c.facebook));
+    if(c.linkedin) {
+      const linkedinLink = document.getElementById('contact-linkedin');
+      linkedinLink.href = `https://${c.linkedin}`;
+    }
+    if(c.github) {
+      const githubLink = document.getElementById('contact-github');
+      githubLink.href = `https://${c.github}`;
+    }
+    if(c.instagram) {
+      const instagramLink = document.getElementById('contact-instagram');
+      instagramLink.href = `https://${c.instagram}`;
+    }
+    if(c.facebook) {
+      const facebookLink = document.getElementById('contact-facebook');
+      facebookLink.href = `https://${c.facebook}`;
+    }
+    
+    // Store email for contact form
+    window.portfolioEmail = c.email;
 
     // Footer
     document.getElementById('footer-year').textContent = new Date().getFullYear();
@@ -138,12 +233,4 @@ async function loadData(){
   }
 }
 
-function makeContactRow(path, label, value){
-  const div = el('div','contact-row mb-2');
-  const svg = el('svg','me-2 icon-indigo'); svg.setAttribute('width','18'); svg.setAttribute('height','18'); svg.setAttribute('viewBox','0 0 24 24'); svg.innerHTML = `<path d="${path}" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`;
-  const strong = el('strong','', label+': ');
-  const span = el('span','ms-2', value);
-  div.appendChild(svg); div.appendChild(strong); div.appendChild(span); return div;
-}
-
-document.addEventListener('DOMContentLoaded', () => { setupNavBehavior(); loadData(); });
+document.addEventListener('DOMContentLoaded', () => { setupNavBehavior(); setupContactForm(); loadData(); });

@@ -1,8 +1,8 @@
 {
   "name": "Jhon Mcneil Magtibay",
   "title": "Full Stack Developer",
-  "avatar": "images/IMG_5311.JPG",
-  "about": "Hi! I'm Mcneil. \n \nI'm a backend developer specializing in Java and Node.js, with a strong focus on building efficient, scalable, and secure server-side applications. I enjoy tackling complex problems and designing systems that perform seamlessly behind the scenes. \n\nWhen I’m not coding, you’ll probably find me exploring vast virtual worlds — I’m a big fan of open-world games, where I can dive into new adventures and uncover hidden details, much like I do in code.",
+  "avatar": "images/IDpic.jpg",
+  "about": "Hi! I'm Mcneil. \n \nI'm a full-stack developer who specializes in backend development, with a strong focus on building efficient, scalable, and secure server-side applications. I love tackling complex problems and designing systems that run smoothly behind the scenes while ensuring a seamless experience on the front end. \n\nWhen I’m not coding, you’ll probably find me immersed in survival and puzzle games — I enjoy the challenge of strategic thinking and problem-solving, whether it’s surviving in a digital wilderness or cracking intricate puzzles.",
   "education": [
     {
       "degree": "Bachelor of Science in Information Technology",
@@ -16,29 +16,89 @@
       "details": "Graduated with High Honors"
     }
   ],
-  "chips": ["Web Development", "Backend Development"],
-  "skills": ["Angular", "Nodejs", "Java", "Responsive UI"],
+  "chips": ["Web Development", "Backend Development", "Frontend Development"],
+  "skills": ["Angular", "Nodejs", "Java", "Responsive UI", "JavaScript", "HTML", "CSS", "MySQL", "Python"],
   "projects": [
     { 
       "title": "ATM CLI Process", 
       "description": "A command-line interface for ATM transactions.",
-      "languages": ["Java", "MySQL"]
+      "languages": ["Java", "MySQL"],
+      "repository": "https://github.com/JhonMcFrost/ATM_process"
     },
     { 
       "title": "Tourism Website", 
       "description": "Beautiful tourism website showcasing destinations and packages.",
-      "languages": ["HTML", "CSS", "JavaScript", "Bootstrap"]
+      "languages": ["HTML", "CSS", "JavaScript", "Bootstrap"],
+      "repository": "https://github.com/JhonMcFrost/Tourism"
     },
     { 
       "title": "Pathpickr", 
       "description": "A track recommending application for students that helps them find suitable study paths.",
-      "languages": ["HTML", "CSS", "Java", "JavaScript"]
+      "languages": ["HTML", "CSS", "Java", "JavaScript"],
+      "repository": "https://github.com/JhonMcFrost/PathPickr"
+    },
+    { 
+      "title": "Login API with OAuth2", 
+      "description": "A RESTful API for user authentication and management.",
+      "languages": ["JavaScript", "Node.js", "Express", "OAuth2"],
+      "repository": "https://github.com/JhonMcFrost/login"
+    },
+    {
+      "title": "Signup API with OAuth2",
+      "description": "A RESTful API for user registration.",
+      "languages": ["JavaScript", "Node.js", "Express", "OAuth2"],
+      "repository": "https://github.com/JhonMcFrost/AST2008-Implement-User-Signup-API-NodeJS-SQLite-"
+    },
+    { 
+      "title": "CRUD System", 
+      "description": "A simple CRUD application for managing records.",
+      "languages": ["Angular", "TypeScript", "JSON Server"],
+      "repository": "https://github.com/JhonMcFrost/crud-app"
+    },
+        { 
+      "title": "CRUD Student Management System", 
+      "description": "A web-based application for managing student records.",
+      "languages": ["Angular", "TypeScript", "JSON Server"],
+      "repository": "https://github.com/JhonMcFrost/student_management_system"
+    }
+  ],
+  "notable achievements": [
+    {
+      "title": "Learning Express Program 2025",
+      "description": "Participated in LeX Program2025: Global to Local Community Engagement, hosted by BatState-U TNE, in partnership with Singapore Polytechnic. ",
+      "year": "2025"
+    },
+    {
+      "title": "CICS Governor Mabini in Supreme Student Council",
+      "description": "Elected as the CICS Governor Mabini in Supreme Student Council for the 2025-2026 academic year",
+      "year": "2025-2026"
+    },
+    {
+      "title": "Vice President for External Affairs in CICS Mabini Student Council",
+      "description": "Elected as the Vice President for External Affairs of CICS Mabini Student Council for the 2025-2026 academic year",
+      "year": "2025-2026"
+    },
+    {
+      "title": "President in CICS Mabini Student Council",
+      "description": "Elected as the President of CICS Mabini Student Council for the 2024-2025 academic year",
+      "year": "2024-2025"
+    },
+    {
+      "title": "1st Year Representative in CICS Mabini Student Council",
+      "description": "Assigned as the 1st year representative in CICS Mabini Student Council for the 2023-2024 academic year",
+      "year": "2023-2024"
+    },
+    {
+      "title": "Computer System Servicing NC II",
+      "description": "Completed the National Certificate II for Computer Systems Servicing under TESDA",
+      "year": "2023"
     }
   ],
   "contact": {
     "email": "jhonmcneilmagtibay5002@gmail.com",
     "linkedin": "linkedin.com/in/jhon-mcneil-magtibay",
     "github": "github.com/JhonMcFrost",
-    "facebook": "facebook.com/jhonmcneil.magtibay.7"
+    "facebook": "facebook.com/jhonmcneil.magtibay.7",
+    "instagram": "instagram.com/jhon_mc.neil"
   }
 }
