@@ -100,6 +100,27 @@ body{
   transform: scale(1.1);
 }
 
+/* CV Link Button */
+.CV_link {
+  margin-left: 8rem;
+}
+
+.CV_link button {
+  padding:6px 10px;
+  border-radius:20px;
+  background: rgba(255,255,255,0.06);
+  color: #4ecdc4; /* force white text */
+  border:1px solid transparent;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.CV_link button:hover {
+  background: rgba(144,202,249,0.08); 
+  border-color:#90caf9; 
+  color: #ffffff;
+}
+
 /* Main content adjustment */
 .main-content {
   margin-left: 80px;

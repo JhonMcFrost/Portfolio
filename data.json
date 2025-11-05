@@ -20,7 +20,7 @@
   "skills": ["Angular", "Nodejs", "Java", "Responsive UI", "JavaScript", "HTML", "CSS", "MySQL", "Python"],
   "projects": [
     { 
-      "title": "ATM CLI Process", 
+      "title": "VaultX ATM CLI Process", 
       "description": "A command-line interface for ATM transactions.",
       "languages": ["Java", "MySQL"],
       "repository": "https://github.com/JhonMcFrost/ATM_process"
