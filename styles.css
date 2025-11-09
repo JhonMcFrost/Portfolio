@@ -219,11 +219,20 @@ body{
   border-color: #4ecdc4;
 }
 
-.card.project-card{ transition: box-shadow 150ms ease, border-color 150ms ease; border:1px solid transparent; }
-.card.project-card{ background: rgba(255,255,255,0.02); border-radius:12px; }
+.card.project-card{ 
+  transition: box-shadow 150ms ease, border-color 150ms ease, transform 150ms ease; 
+  border:1px solid transparent; 
+  background: rgba(255,255,255,0.02); 
+  border-radius:12px; 
+  position: relative; 
+  overflow: visible;
+}
 .card.project-card:hover{ 
   box-shadow: 0 10px 30px rgba(78, 205, 196, 0.25); 
   border-color: rgba(78, 205, 196, 0.25); 
+}
+/* Only cards with deployment link expand upward on hover */
+.card.project-card.has-deployment:hover {
   transform: translateY(-5px);
 }
 
@@ -235,6 +244,54 @@ a.project-card {
 a.project-card:hover { 
   color: inherit !important; 
   text-decoration: none !important; 
+}
+/* Live (deployment) button, appears inline after description, visible on hover */
+.project-live-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4ecdc4 !important;
+  background: rgba(255,255,255,0.06);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(78, 205, 196, 0.25);
+  text-decoration: none !important;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease, margin 0.3s ease, box-shadow 0.3s ease;
+  pointer-events: none;
+}
+.project-live-btn svg { 
+  color: #4ecdc4;
+  transition: transform 0.3s ease;
+}
+.project-card:hover .project-live-btn,
+.project-card:focus-within .project-live-btn {
+  opacity: 1;
+  max-height: 100px;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25em;
+  pointer-events: auto;
+}
+.project-live-btn:hover { 
+  box-shadow: 0 8px 20px rgba(78,205,196,0.4);
+}
+.project-live-btn:hover svg {
+  transform: translateX(2px) translateY(-2px);
+}
+
+/* Small tweaks on very small phones */
+@media (max-width: 480px) {
+  .project-live-btn {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.8rem;
+  }
 }
 .icon-indigo{ color: var(--indigo); }
 .contact-row{ display:flex; align-items:center; gap:.5rem; }

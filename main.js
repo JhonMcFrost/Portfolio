@@ -142,21 +142,24 @@ async function loadData(){
     projectsGrid.innerHTML = '';
     (data.projects||[]).forEach(proj => {
       const col = el('div','col-12 col-md-6 col-lg-4');
-      
-      // Make the entire card clickable if repository exists
-      let card;
-      if (proj.repository) {
-        card = document.createElement('a');
-        card.href = proj.repository;
-        card.target = '_blank';
-        card.rel = 'noopener noreferrer';
-        card.className = 'card project-card h-100 text-decoration-none';
-        card.style.cursor = 'pointer';
-      } else {
-        card = document.createElement('div');
-        card.className = 'card project-card h-100';
+
+      // Always render a div.card and add behavior for repo/live links
+      const card = document.createElement('div');
+      card.className = 'card project-card h-100';
+      card.style.cursor = proj.repository ? 'pointer' : 'default';
+
+      // Accessibility: allow keyboard activation like a link
+      card.setAttribute('role','link');
+      card.setAttribute('tabindex','0');
+
+      // Store links as dataset for handlers
+      if (proj.repository) card.dataset.repo = proj.repository;
+      const liveUrl = proj.deployment || proj.live; // support either key
+      if (liveUrl) {
+        card.dataset.live = liveUrl;
+        card.classList.add('has-deployment'); // Mark cards with deployment
       }
-      
+
       const body = document.createElement('div'); 
       body.className = 'card-body';
       const row = document.createElement('div'); 
@@ -172,7 +175,7 @@ async function loadData(){
       const p = el('p','card-text text-muted', proj.description||'');
       body.appendChild(row); 
       body.appendChild(p); 
-      
+
       // Add programming language chips if they exist
       if (proj.languages && proj.languages.length > 0) {
         const langContainer = el('div', 'mt-2 d-flex flex-wrap gap-1');
@@ -182,7 +185,43 @@ async function loadData(){
         });
         body.appendChild(langContainer);
       }
-      
+
+      // Add "View Site" button if deployment (live) URL exists, placed after description
+      if (liveUrl) {
+        const liveBtn = document.createElement('a');
+        liveBtn.className = 'project-live-btn';
+        liveBtn.href = liveUrl;
+        liveBtn.target = '_blank';
+        liveBtn.rel = 'noopener noreferrer';
+        liveBtn.setAttribute('aria-label', `Open live site for ${proj.title || 'project'}`);
+        liveBtn.innerHTML = `
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M14 3h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 3l-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 14v4a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>View Site</span>`;
+        body.appendChild(liveBtn);
+      }
+
+      // Click/keyboard handlers to open repository when card is activated
+      const openRepo = () => {
+        if (card.dataset.repo) {
+          window.open(card.dataset.repo, '_blank', 'noopener');
+        }
+      };
+      card.addEventListener('click', (e) => {
+        // If the live button was clicked, let its default behavior occur
+        if (e.target && e.target.closest && e.target.closest('.project-live-btn')) return;
+        openRepo();
+      });
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openRepo();
+        }
+      });
+
       card.appendChild(body); 
       col.appendChild(card); 
       projectsGrid.appendChild(col);

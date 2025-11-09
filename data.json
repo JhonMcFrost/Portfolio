@@ -29,11 +29,12 @@
       "title": "Tourism Website", 
       "description": "Beautiful tourism website showcasing destinations and packages.",
       "languages": ["HTML", "CSS", "JavaScript", "Bootstrap"],
-      "repository": "https://github.com/JhonMcFrost/Tourism"
+      "repository": "https://github.com/JhonMcFrost/Tourism",
+      "deployment": "https://tourism-swart-zeta.vercel.app/"
     },
     { 
       "title": "Pathpickr", 
-      "description": "A track recommending application for students that helps them find suitable study paths.",
+      "description": "A track recommending website for students that helps them find suitable study paths.",
       "languages": ["HTML", "CSS", "Java", "JavaScript"],
       "repository": "https://github.com/JhonMcFrost/PathPickr"
     },
@@ -60,6 +61,13 @@
       "description": "A web-based application for managing student records.",
       "languages": ["Angular", "TypeScript", "JSON Server"],
       "repository": "https://github.com/JhonMcFrost/student_management_system"
+    },
+    { 
+      "title": "Oh Crepe!: E-commerce Website", 
+      "description": "An e-commerce website for a fictional crepe shop.",
+      "languages": ["Angular", "TypeScript", "CSS", "Node.js", "JavaScript"],
+      "repository": "hhttps://github.com/JhonMcFrost/Oh-crepe-",
+      "deployment": "https://oh-crepe-seven.vercel.app/"
     }
   ],
   "notable achievements": [
