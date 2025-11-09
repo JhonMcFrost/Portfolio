@@ -68,6 +68,12 @@
       "languages": ["Angular", "TypeScript", "CSS", "Node.js", "JavaScript"],
       "repository": "hhttps://github.com/JhonMcFrost/Oh-crepe-",
       "deployment": "https://oh-crepe-seven.vercel.app/"
+    },
+    {
+      "title": "Simple Sign Language Detection",
+      "description": "A project that utilizes machine learning to detect and interpret sign language gestures.",
+      "languages": ["Python"],
+      "repository": "https://github.com/JhonMcFrost/Simple-Sign-Language-Detection"
     }
   ],
   "notable achievements": [
