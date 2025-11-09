@@ -9,6 +9,49 @@ body{
   display: flex;
 }
 
+/* Improved Section Spacing */
+section {
+  padding: 4rem 0;
+  margin-bottom: 2rem;
+}
+
+section:first-of-type {
+  padding-top: 2rem;
+}
+
+section h2 {
+  margin-bottom: 2.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #4ecdc4 0%, transparent 100%);
+}
+
+/* Better Typography */
+p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
 /* Sidebar styling */
 .sidebar {
   position: fixed;
@@ -127,6 +170,8 @@ body{
   flex: 1;
   padding: 2rem;
   min-height: 100vh;
+  max-width: 1400px;
+  margin-right: auto;
 }
 
 /* Mobile toggle button */
@@ -189,22 +234,43 @@ body{
   box-shadow: 0 8px 24px rgba(57,73,171,0.15);
   margin:1rem auto;
 }
+/* Skills & Chips Container */
+.skills-container,
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
 .chip, .skill{
   display:inline-block;
-  padding:6px 10px;
+  padding:8px 14px;
   border-radius:20px;
   background: rgba(255,255,255,0.03);
-  color: #4ecdc4; /* force white text */
+  color: #4ecdc4;
   border:1px solid transparent;
   transition:all 120ms ease;
   font-size:.9rem;
 }
-.chip:hover, .skill:hover{ background: rgba(144,202,249,0.08); border-color:#90caf9; color: #ffffff; }
+.chip:hover, .skill:hover{ 
+  background: rgba(144,202,249,0.08); 
+  border-color:#90caf9; 
+  color: #ffffff;
+  transform: translateY(-2px);
+}
 
 /* Project language chips */
+.project-languages {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .project-lang-chip {
   display: inline-block;
-  padding: 4px 8px;
+  padding: 5px 10px;
   border-radius: 12px;
   background: rgba(78, 205, 196, 0.1);
   color: #4ecdc4;
@@ -219,6 +285,11 @@ body{
   border-color: #4ecdc4;
 }
 
+/* Projects Grid (Bootstrap layout retained; remove custom CSS Grid) */
+#projects-grid {
+  margin-top: 1.5rem;
+}
+
 .card.project-card{ 
   transition: box-shadow 150ms ease, border-color 150ms ease, transform 150ms ease; 
   border:1px solid transparent; 
@@ -226,7 +297,20 @@ body{
   border-radius:12px; 
   position: relative; 
   overflow: visible;
+  padding: 0.5rem;
 }
+
+.card.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.card.project-card p {
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
 .card.project-card:hover{ 
   box-shadow: 0 10px 30px rgba(78, 205, 196, 0.25); 
   border-color: rgba(78, 205, 196, 0.25); 
@@ -330,12 +414,19 @@ footer#footer{ color: rgba(230,238,248,0.7); }
   border-radius: 8px;
   border-left: 3px solid #4ecdc4;
   transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+.education-item:last-child {
+  margin-bottom: 0;
 }
 
 .education-item h3 {
   font-size: 1.25rem !important;
   font-weight: 600 !important;
   color: #ffffff !important;
+  margin-top: 0;
 }
 
 .education-item:hover {
@@ -434,29 +525,32 @@ footer#footer{ color: rgba(230,238,248,0.7); }
   border-radius: 8px;
   border-left: 3px solid #4ecdc4;
   transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
 }
+
+.notable-achievement-item:last-child {
+  margin-bottom: 0;
+}
+
 .notable-achievement-item h3 {
   font-size: 1.25rem !important;
   font-weight: 600 !important;
   color: #4ecdc4 !important;
+  margin-top: 0;
 }
+
 .notable-achievement-item:hover {
   background: rgba(255,255,255,0.04);
   transform: translateX(5px);
 }
+
 .notable-achievement-item p {
   color: #ffffff !important;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
-.notable-achievement-item p:last-child {
-  margin-bottom: 0;
-}
-.notable-achievement-item p:last-child {
-  margin-bottom: 0;
-}
-.notable-achievement-item p:last-child {
-  margin-bottom: 0;
-}
+
 .notable-achievement-item p:last-child {
   margin-bottom: 0;
 }
@@ -503,11 +597,7 @@ footer#footer{ color: rgba(230,238,248,0.7); }
     padding: 1.5rem;
   }
   
-  /* Ensure projects display nicely on tablets */
-  #projects-grid .col-lg-4 {
-    width: 50% !important;
-    padding: 0.5rem;
-  }
+  /* Remove manual width overrides; rely on Bootstrap's col-* */
 }
 
 /* Tablets (768px and down) */
@@ -576,16 +666,18 @@ footer#footer{ color: rgba(230,238,248,0.7); }
     text-align: center !important;
   }
   
-  /* Project grid responsive */
-  #projects-grid .col-12 {
-    width: 100% !important;
-    margin-bottom: 1rem;
+  /* Project grid responsive: spacing tweak only */
+  #projects-grid { margin-top: 1.25rem; }
+  
+  section {
+    padding: 2.5rem 0;
   }
   
-  /* Better project card spacing on tablet */
-  #projects-grid .col-md-6 {
-    width: 100% !important;
+  section h2 {
+    font-size: 1.75rem;
   }
+  
+  /* Better project card spacing on tablet: no width overrides needed with Bootstrap */
   
   /* Optimize contact form for tablets */
   .contact-form .row .col-md-6 {
@@ -612,6 +704,23 @@ footer#footer{ color: rgba(230,238,248,0.7); }
   .site-header {
     padding: 0.75rem;
     margin-bottom: 0.75rem;
+  }
+  
+  section {
+    padding: 2rem 0;
+  }
+  
+  section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  #projects-grid { margin-top: 1rem; }
+  
+  .education-item,
+  .notable-achievement-item {
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
   }
   
   .content-wrapper {
