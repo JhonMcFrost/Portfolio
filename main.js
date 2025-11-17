@@ -160,6 +160,18 @@ async function loadData(){
         card.classList.add('has-deployment'); // Mark cards with deployment
       }
 
+      // Add project image if available
+      if (proj.image) {
+        const imgContainer = document.createElement('div');
+        imgContainer.className = 'project-image-container';
+        const img = document.createElement('img');
+        img.src = proj.image;
+        img.alt = proj.title || 'Project image';
+        img.className = 'project-image';
+        imgContainer.appendChild(img);
+        card.appendChild(imgContainer);
+      }
+
       const body = document.createElement('div'); 
       body.className = 'card-body';
       const row = document.createElement('div'); 
