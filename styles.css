@@ -145,7 +145,7 @@ h3 {
 
 /* CV Link Button */
 .CV_link {
-  margin-left: 8rem;
+  padding: 0.8rem 0;
 }
 
 .CV_link button {
@@ -225,8 +225,8 @@ h3 {
   }
 }
 .avatar{
-  width:112px;
-  height:112px;
+  width:165px;
+  height:165px;
   border-radius:50%;
   object-fit:cover;
   object-position: top;
@@ -244,7 +244,9 @@ h3 {
 }
 
 .chip, .skill{
-  display:inline-block;
+  display:inline-flex;
+  align-items: center;
+  gap: 6px;
   padding:8px 14px;
   border-radius:20px;
   background: rgba(255,255,255,0.03);
@@ -253,6 +255,12 @@ h3 {
   transition:all 120ms ease;
   font-size:.9rem;
 }
+
+.chip svg, .skill svg {
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
 .chip:hover, .skill:hover{ 
   background: rgba(144,202,249,0.08); 
   border-color:#90caf9; 
@@ -269,7 +277,9 @@ h3 {
 }
 
 .project-lang-chip {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   padding: 5px 10px;
   border-radius: 12px;
   background: rgba(78, 205, 196, 0.1);
@@ -278,6 +288,11 @@ h3 {
   font-size: 0.75rem;
   font-weight: 500;
   transition: all 120ms ease;
+}
+
+.project-lang-chip svg {
+  flex-shrink: 0;
+  vertical-align: middle;
 }
 
 .project-lang-chip:hover {
@@ -528,8 +543,9 @@ footer#footer{ color: rgba(230,238,248,0.7); }
 }
 
 .contact-form .btn-primary {
-  background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
-  border: none;
+  background: rgba(255,255,255,0.06);
+  color: #4ecdc4;
+  border-color: transparent;
   border-radius: 8px;
   padding: 0.75rem 2rem;
   font-weight: 500;
@@ -538,7 +554,7 @@ footer#footer{ color: rgba(230,238,248,0.7); }
 
 .contact-form .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.3);
+  border-color: #90caf9;
 }
 
 .contact-form .btn-primary:focus {
