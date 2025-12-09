@@ -597,6 +597,70 @@ footer#footer{ color: rgba(230,238,248,0.7); }
   margin-bottom: 0;
 }
 
+/* School Projects section styling */
+.school-project-item {
+  background: rgba(255,255,255,0.02);
+  border-radius: 8px;
+  border-left: 3px solid #4ecdc4;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+.school-project-item:last-child {
+  margin-bottom: 0;
+}
+
+.school-project-item h3 {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  margin-top: 0;
+}
+
+.school-project-item:hover {
+  background: rgba(255,255,255,0.04);
+  transform: translateX(5px);
+}
+
+.school-project-item p {
+  color: #ffffff !important;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.school-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4ecdc4 !important;
+  background: rgba(255,255,255,0.06);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(78, 205, 196, 0.25);
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+
+.school-project-link:hover {
+  box-shadow: 0 8px 20px rgba(78,205,196,0.4);
+  transform: translateY(-2px);
+}
+
+.school-project-link svg {
+  flex-shrink: 0;
+  vertical-align: middle;
+  color: #4ecdc4;
+  transition: transform 0.3s ease;
+}
+
+.school-project-link:hover svg {
+  transform: translateX(2px) translateY(-2px);
+}
+
 /* =========================== */
 /* RESPONSIVE DESIGN RULES    */
 /* =========================== */

@@ -5,7 +5,7 @@
   "about": "Hi! I'm Mcneil. \n \nI'm a full-stack developer who specializes in backend development, with a strong focus on building efficient, scalable, and secure server-side applications. I love tackling complex problems and designing systems that run smoothly behind the scenes while ensuring a seamless experience on the front end. \n\nWhen I’m not coding, you’ll probably find me immersed in survival and puzzle games — I enjoy the challenge of strategic thinking and problem-solving, whether it’s surviving in a digital wilderness or cracking intricate puzzles.",
   "education": [
     {
-      "degree": "Bachelor of Science in Information Technology",
+      "degree": "Bachelor of Science in Information Technology major in Business Analiytics",
       "institution": "Batangas State University The National Engineering School - Mabini Campus",
       "year": "2023 - Present"
     },
@@ -113,6 +113,13 @@
       "title": "Computer System Servicing NC II",
       "description": "Completed the National Certificate II for Computer Systems Servicing under TESDA",
       "year": "2023"
+    }
+  ],
+  "school_projects": [
+    {
+    "title": "NutriBlend Lookers Report",
+    "description": "A Lookers Studio report analyzing the sales and performance of NutriBlend products.",
+    "link": "https://lookerstudio.google.com/s/nEu10wluDOc"
     }
   ],
   "contact": {

@@ -300,6 +300,25 @@ async function loadData(){
       notableAchievementsList.appendChild(div);
     });
 
+    // School Projects
+    const schoolProjectsList = document.getElementById('school-projects-list');
+    schoolProjectsList.innerHTML = '';
+    (data['school_projects']||[]).forEach(project => {
+      const div = el('div','school-project-item mb-3 p-3');
+      const title = el('h3','h6 mb-2 fw-semibold', project.title||'');
+      const description = el('p','mb-3 text-muted', project.description||'');
+      const link = document.createElement('a');
+      link.className = 'school-project-link';
+      link.href = project.link||'#';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 3h7v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 3l-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 14v4a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> View Project';
+      div.appendChild(title);
+      div.appendChild(description);
+      div.appendChild(link);
+      schoolProjectsList.appendChild(div);
+    });
+
     // Sidebar Contact Icons
     const c = data.contact || {};
     if(c.linkedin) {
