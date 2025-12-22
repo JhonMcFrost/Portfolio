@@ -30,7 +30,7 @@
       "title": "Tourism Website", 
       "description": "Beautiful tourism website showcasing destinations and packages.",
       "languages": ["HTML", "CSS", "JavaScript", "Bootstrap"],
-      "repository": "https://github.com/Mcneil_official/Tourism",
+      "repository": "https://github.com/Mcneil-official/Tourism",
       "deployment": "https://tourism-swart-zeta.vercel.app/",
       "image": "images/projects/tourism.png"
     },
