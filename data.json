@@ -23,7 +23,7 @@
       "title": "VaultX ATM CLI Process", 
       "description": "A command-line interface for ATM transactions.",
       "languages": ["Java", "MySQL"],
-      "repository": "https://github.com/Mcneil_official/ATM_process",
+      "repository": "https://github.com/Mcneil-official/ATM_process",
       "image": "images/projects/vaultx.png"
     },
     { 
@@ -38,40 +38,40 @@
       "title": "Pathpickr", 
       "description": "A track recommending website for students that helps them find suitable study paths.",
       "languages": ["HTML", "CSS", "Java", "JavaScript"],
-      "repository": "https://github.com/Mcneil_official/PathPickr",
+      "repository": "https://github.com/Mcneil-official/PathPickr",
       "image": "images/projects/pathpickr.png"
     },
     { 
       "title": "Login API with OAuth2", 
       "description": "A RESTful API for user authentication and management.",
       "languages": ["JavaScript", "Node.js", "Express", "OAuth2"],
-      "repository": "https://github.com/Mcneil_official/login"
+      "repository": "https://github.com/Mcneil-official/login"
     },
     {
       "title": "Signup API with OAuth2",
       "description": "A RESTful API for user registration.",
       "languages": ["JavaScript", "Node.js", "Express", "OAuth2"],
-      "repository": "https://github.com/Mcneil_official/AST2008-Implement-User-Signup-API-NodeJS-SQLite-"
+      "repository": "https://github.com/Mcneil-official/AST2008-Implement-User-Signup-API-NodeJS-SQLite-"
     },
     { 
       "title": "CRUD System", 
       "description": "A simple CRUD application for managing records.",
       "languages": ["Angular", "TypeScript", "JSON Server"],
-      "repository": "https://github.com/Mcneil_official/crud-app",
+      "repository": "https://github.com/Mcneil-official/crud-app",
       "image": "images/projects/crudsystem.png"
     },
         { 
       "title": "CRUD Student Management System", 
       "description": "A web-based application for managing student records.",
       "languages": ["Angular", "TypeScript", "JSON Server"],
-      "repository": "https://github.com/Mcneil_official/student_management_system",
+      "repository": "https://github.com/Mcneil-official/student_management_system",
       "image": "images/projects/studentmanagement.png"
     },
     { 
       "title": "Oh Crepe!: E-commerce Website", 
       "description": "An e-commerce website for a fictional crepe shop.",
       "languages": ["Angular", "TypeScript", "CSS", "Node.js", "JavaScript"],
-      "repository": "hhttps://github.com/Mcneil_official/Oh-crepe-",
+      "repository": "hhttps://github.com/Mcneil-official/Oh-crepe-",
       "deployment": "https://oh-crepe-seven.vercel.app/",
       "image": "images/projects/ohcrepe.png"
     },
@@ -79,7 +79,7 @@
       "title": "Simple Sign Language Detection",
       "description": "A project that utilizes machine learning to detect and interpret sign language gestures.",
       "languages": ["Python"],
-      "repository": "https://github.com/Mcneil_official/Simple-Sign-Language-Detection",
+      "repository": "https://github.com/Mcneil-official/Simple-Sign-Language-Detection",
       "image" : "images/projects/signlanguage.png"
     }
   ],
