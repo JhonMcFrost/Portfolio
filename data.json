@@ -19,25 +19,19 @@
     }
   ],
   "chips": ["Web Development", "Backend Development", "Frontend Development", "Mobile Development"],
-  "skills": ["Angular", "Nodejs", "Java", "Flutter", "JavaScript", "HTML", "CSS", "MySQL", "Python", "React Native", "Bootstrap", "TypeScript", "Express", "JSON Server", "OAuth2"],
+  "skills": ["Angular", "Nodejs", "Java", "Flutter", "JavaScript", "HTML", "CSS", "MySQL", "Python", "React Native", "TypeScript", "PostgreSQL", "Spring Boot"],
   "experiences": [
+        {
+      "position": "Full Stack Developer / Co-Founder",
+      "company": "CONEXUS",
+      "duration": "September 2025 - Present",
+      "description": "Co-founded a startup focused on providing innovative solutions for local businesses. Leading the development of web and mobile applications, ensuring high performance and user-friendly interfaces."
+    },
     {
       "position": "Backend Developer Intern",
       "company": "Stockout",
       "duration": "May 2025 - June 2025",
       "description": "Developing e-commerce web applications using Node.js and Express. Collaborated with frontend developers to integrate APIs and ensure seamless data flow."
-    },
-    {
-      "position": "Full Stack Developer",
-      "company": "Mabini.js",
-      "duration": "December 2025 - February 2026",
-      "description": "Competed in the 1st Mayoral Hackathon organized by the Naga City Local Government. Developed a web application using React Native, achieving top 5 finalist in the category of health among 100+ teams that participated in the hackathon."
-    },
-    {
-      "position": "Full Stack Developer / Co-Founder",
-      "company": "CONEXUS",
-      "duration": "September 2025 - Present",
-      "description": "Co-founded a startup focused on providing innovative solutions for local businesses. Leading the development of web and mobile applications, ensuring high performance and user-friendly interfaces."
     }
   ],
   "projects": [
@@ -76,30 +70,11 @@
       "image": "images/projects/vaultx.png"
     },
     {
-      "title": "CRUD System",
-      "description": "Simple CRUD application for managing records.",
-      "languages": ["Angular", "TypeScript", "JSON Server"],
-      "repository": "https://github.com/JhonMcFrost/crud-app",
-      "image": "images/projects/crudsystem.png"
-    },
-    {
       "title": "Pathpickr",
       "description": "Student track recommendation website that suggests suitable study paths.",
       "languages": ["HTML", "CSS", "Java", "JavaScript"],
       "repository": "https://github.com/JhonMcFrost/PathPickr",
       "image": "images/projects/pathpickr.png"
-    },
-    {
-      "title": "Login API with OAuth2 for Stockout",
-      "description": "RESTful API for user authentication and account access.",
-      "languages": ["JavaScript", "Node.js", "Express", "OAuth2"],
-      "repository": "https://github.com/JhonMcFrost/login"
-    },
-    {
-      "title": "Signup API with OAuth2 for Stockout",
-      "description": "RESTful API for secure user registration.",
-      "languages": ["JavaScript", "Node.js", "Express", "OAuth2"],
-      "repository": "https://github.com/JhonMcFrost/AST2008-Implement-User-Signup-API-NodeJS-SQLite-"
     },
     {
       "title": "Simple Sign Language Detection",
@@ -132,7 +107,7 @@
       "year": "2025",
       "description": "Participated in LeX 2025: Global to Local Community Engagement.",
       "image": "",
-      "credentialUrl": ""
+      "credentialUrl": "https://drive.google.com/file/d/1Lh8Yp3y3pD0iO-1RgTvWVh4fNM6iz4I6/view?usp=drive_link"
     },
     {
       "title": "GINHAWA A Student Well-Being Summit: Inspiring Wellness, Leadership, and Purpose in Higher Education.",
@@ -140,7 +115,7 @@
       "year": "2026",
       "description": "Participated in the GINHAWA Student Well-Being Summit.",
       "image": "",
-      "credentialUrl": ""
+      "credentialUrl": "https://drive.google.com/file/d/1nvgvaYb5gcFc_0643buzKBMCbkAV-h0I/view?usp=drive_link"
     },
     {
       "title": "AI Class ASEAN",
@@ -148,15 +123,23 @@
       "year": "2026",
       "description": "Successfully completed the AI Class ASEAN program, gaining knowledge in artificial intelligence and its applications.",
       "image": "",
-      "credentialUrl": ""
+      "credentialUrl": "https://drive.google.com/file/d/1eJbWHWw4GzqKy1rfie8TeYKfj8r7Ojy1/view?usp=drive_link"
     },
     {
       "title": "AI Fundamentals: Foundations for Understanding AI",
       "issuer": "Cisco Networking Academy",
       "year": "2026",
       "description": "Learned the fundamentals of artificial intelligence and its applications.",
-      "image": "https://drive.google.com/file/d/1OMB6dbj8lidkvLSkJ9lWw_-nhndOKUyd/view?usp=drive_link",
-      "credentialUrl": ""
+      "image": "",
+      "credentialUrl": "https://drive.google.com/file/d/1OMB6dbj8lidkvLSkJ9lWw_-nhndOKUyd/view?usp=drive_link"
+    },
+    {
+      "title": "AI Fundamentals: Language and Vision in AI",
+      "issuer": "Cisco Networking Academy",
+      "year": "2026",
+      "description": "Learned the fundamentals of language and vision in artificial intelligence.",
+      "image": "",
+      "credentialUrl": "https://drive.google.com/file/d/1tsMqQ8Ce7uhFnfLr76IsRe4e5VArANWx/view?usp=drive_link"
     },
     {
       "title": "Introduction to Modern AI",
@@ -164,7 +147,71 @@
       "year": "2026",
       "description": "Completed the IBM Skillbuild course on Introduction to Modern AI, gaining insights into AI concepts and applications.",
       "image": "",
-      "credentialUrl": ""
+      "credentialUrl": "https://drive.google.com/file/d/1_b2aXIjpZannBMhQkmhq26WCF-KPmhL8/view?usp=drive_link"
+    },
+    {
+      "title": "AI Fundamentals",
+      "issuer": "Google (Coursera)",
+      "year": "2026",
+      "description": "Learned the practical applications of artificial intelligence.",
+      "image": "",
+      "credentialUrl": "https://drive.google.com/file/d/1MXRwQkUuYT1SdebV4npAO6mrwTN3ukfU/view?usp=drive_link"
+    },
+    {
+      "title": "AI for Brainstorming and Planning",
+      "issuer": "Google (Coursera)",
+      "year": "2026",
+      "description": "Learned how to use AI for brainstorming and planning purposes.",
+      "image": "",
+      "credentialUrl": "https://drive.google.com/file/d/1KTaWO84Q25Kq6uIxxNNqwKmuzuluOuaU/view?usp=drive_link"
+    },
+    {
+      "title": "AI for Research and Insights",
+      "issuer": "Google (Coursera)",
+      "year": "2026",
+      "description": "Learned how to leverage AI for research and gaining insights.",
+      "image": "",
+      "credentialUrl": "https://drive.google.com/file/d/1TQggkrHxX0RjjzAiD4gbtk34pG4m_AUV/view?usp=drive_link"
+    },
+    {
+      "title": "AI for Writing and Communicating",
+      "issuer": "Google (Coursera)",
+      "year": "2026",
+      "description": "Learned how to leverage AI for writing and communication tasks.",
+      "image": "",
+      "credentialUrl": "https://drive.google.com/file/d/1OuTVkoz0Bg0bVKJ1osv0BwZhpdV60CQ8/view?usp=drive_link"
+    },
+    {
+      "title": "AI for Content Creation",
+      "issuer": "Google (Coursera)",
+      "year": "2026",
+      "description": "Learned how to utilize AI for content creation and generation.",
+      "image": "",
+      "credentialUrl": "https://drive.google.com/file/d/1gg3TqpEFjL2eT3abHhH3iJoY6FQot5nd/view?usp=drive_link"
+    },
+    {
+      "title": "AI for Data Analysis",
+      "issuer": "Google (Coursera)",
+      "year": "2026",
+      "description": "Learned how to apply AI for data analysis and interpretation.",
+      "image": "",
+      "credentialUrl": "https://drive.google.com/file/d/19y4ZxVh0gIfMLWyVA8VbwmZw-LSypIgK/view?usp=drive_link"
+    },
+    {
+      "title": "AI for App Building",
+      "issuer": "Google (Coursera)",
+      "year": "2026",
+      "description": "Learned how to leverage AI for app building.",
+      "image": "",
+      "credentialUrl": "https://drive.google.com/file/d/1K4MEN0dNQgLCTAflea0E23G0DxwmamAM/view?usp=drive_link"
+    },
+    {
+      "title": "AI for App Deployment",
+      "issuer": "Google (Coursera)",
+      "year": "2026",
+      "description": "Learned how to leverage AI for app deployment.",
+      "image": "",
+      "credentialUrl": "https://drive.google.com/file/d/1r9By7N3wbyzxsFmkUvC3rQ3lxNS-tl5X/view?usp=drive_link"
     }
   ],
   "notableAchievements": [

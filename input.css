@@ -209,49 +209,17 @@ body {
   transform: translateY(0);
 }
 
-/* Skills continuous marquee */
-.skills-marquee-viewport {
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-}
-
-.skills-marquee-item {
-  flex-shrink: 0;
-}
-
-.skills-marquee-icon svg {
-  width: 28px;
-  height: 28px;
-}
-
-.skills-marquee {
-  display: flex;
-  width: max-content;
-  align-items: center;
-  animation: skills-marquee 30s linear infinite;
-  will-change: transform;
-}
-
-.skills-marquee:hover {
-  animation-play-state: paused;
-}
-
-@keyframes skills-marquee {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
+/* Skills rows icons */
+.skills-grid-icon svg {
+  width: 22px;
+  height: 22px;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-reveal,
   .hero-scroll,
   .availability-dot,
-  .reveal,
-  .skills-marquee {
+  .reveal {
     animation: none;
     opacity: 1;
     transform: none;
